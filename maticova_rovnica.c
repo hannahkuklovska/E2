@@ -15,4 +15,5 @@ MAT *mat_create_with_type(unsigned int rows, unsigned int cols)
      mat->rows = rows;
      mat->cols = cols;
      mat->elem = (float *)malloc(rows * cols * sizeof(float));
+     return mat;
 }
