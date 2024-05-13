@@ -26,7 +26,15 @@ MAT *mat_create_by_file(char *filename)
           return NULL;
      }
 
-     unsigned int row, cols;
+     unsigned int rows, cols;
      fread(&rows, sizeof(unsigned int), 1, file);
      fread(&cols, sizeof(unsigned int), 1, file);
+
+     // vytvorenie matice
+     MAT *mat = mat_create_with_type(rows, cols);
+     if (mat == NULL)
+     {
+          fclose(file);
+          return NULL;
+     }
 }
