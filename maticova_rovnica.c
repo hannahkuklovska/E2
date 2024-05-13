@@ -17,3 +17,16 @@ MAT *mat_create_with_type(unsigned int rows, unsigned int cols)
      mat->elem = (float *)malloc(rows * cols * sizeof(float));
      return mat;
 }
+
+MAT *mat_create_by_file(char *filename)
+{
+     FILE *file = fopen(filename, "matica");
+     if (file == NULL)
+     {
+          return NULL;
+     }
+
+     unsigned int row, cols;
+     fread(&rows, sizeof(unsigned int), 1, file);
+     fread(&cols, sizeof(unsigned int), 1, file);
+}
