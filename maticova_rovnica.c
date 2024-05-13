@@ -61,3 +61,12 @@ char mat_save(MAT *mat, char *filename)
      fclose(file);
      return SUCCESS;
 }
+
+void mat_destroy(MAT *mat)
+{
+     if (mat != NULL)
+     {
+          free(mat->elem);
+          free(mat);
+     }
+}
