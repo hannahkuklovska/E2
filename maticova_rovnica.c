@@ -55,4 +55,5 @@ char mat_save(MAT *mat, char *filename)
           return NULL;
      }
      fwrite("M1", sizeof(char), 2, file);
+     fwrite(&(mat->rows), sizeof(unsigned int), 1, file);
 }
