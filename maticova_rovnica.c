@@ -37,4 +37,9 @@ MAT *mat_create_by_file(char *filename)
           fclose(file);
           return NULL;
      }
+
+     // prečítanie matice
+     fread(mat->elem, sizeof(float), rows * cols, file);
+
+     fclose(file);
 }
