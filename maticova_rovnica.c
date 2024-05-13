@@ -42,4 +42,5 @@ MAT *mat_create_by_file(char *filename)
      fread(mat->elem, sizeof(float), rows * cols, file);
 
      fclose(file);
+     return mat;
 }
