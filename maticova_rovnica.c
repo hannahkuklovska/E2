@@ -44,3 +44,12 @@ MAT *mat_create_by_file(char *filename)
      fclose(file);
      return mat;
 }
+
+char mat_save(MAT *mat, char *filename)
+{
+     FILE *file = fopen(filename, "matica");
+     if (file == NULL)
+     {
+          return NULL;
+     }
+}
