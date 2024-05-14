@@ -111,5 +111,6 @@ void mat_print(MAT *mat)
           {
                printf("%.2f\t", ELEM(mat, i, j));
           }
+          printf("\n");
      }
 }
