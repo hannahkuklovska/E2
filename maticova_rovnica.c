@@ -129,4 +129,6 @@ char mat_division(MAT *a, MAT *b, MAT *c)
 
      // vysledna matica
      mat_unit(c);
+     c->cols = b->cols;
+     c->rows = a->cols;
 }
