@@ -80,7 +80,11 @@ void mat_unit(MAT *mat)
           {
                if (i == j)
                {
-                    ELEM(mat, i, j) = 1.0f;
+                    ELEM(mat, i, j) = 1.0;
+               }
+               else
+               {
+                    ELEM(mat, i, j) = 0.0;
                }
           }
      }
