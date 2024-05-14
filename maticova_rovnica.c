@@ -101,3 +101,15 @@ void mat_random(MAT *mat)
           }
      }
 }
+
+void mat_print(MAT *mat)
+{
+     unsigned int i, j;
+     for (i = 0; i < mat->rows; i++)
+     {
+          for (j = 0; j < mat->cols; j++)
+          {
+               printf("%.2f\t", ELEM(mat, i, j));
+          }
+     }
+}
