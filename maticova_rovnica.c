@@ -89,3 +89,15 @@ void mat_unit(MAT *mat)
           }
      }
 }
+
+void mat_random(MAT *mat)
+{
+     unsigned int i, j;
+     for (i = 0; i < mat->rows; i++)
+     {
+          for (j = 0; j < mat->cols; j++)
+          {
+               ELEM(mat, i, j) = -1.0 + 2 * ((float)rand()) / RAND_MAX;
+          }
+     }
+}
