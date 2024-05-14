@@ -70,3 +70,18 @@ void mat_destroy(MAT *mat)
           free(mat);
      }
 }
+
+void mat_unit(MAT *mat)
+{
+     unsigned int i, j;
+     for (i = 0; i < mat->rows; i++)
+     {
+          for (j = 0; j < mat->cols; j++)
+          {
+               if (i == j)
+               {
+                    ELEM(mat, i, j) = 1.0f;
+               }
+          }
+     }
+}
