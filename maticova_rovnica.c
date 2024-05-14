@@ -123,3 +123,10 @@ void mat_print(MAT *mat)
           printf("\n");
      }
 }
+
+char mat_division(MAT *a, MAT *b, MAT *c)
+{
+
+     // vysledna matica
+     mat_unit(c);
+}
