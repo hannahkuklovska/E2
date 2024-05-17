@@ -131,6 +131,7 @@ MAT *mat_invert(MAT *input_matrix)
      MAT *augmented_matrix;
      MAT *inverse_matrix;
      int i, j, k;
+     float pivot_value;
 
      if (input_matrix->rows != input_matrix->cols)
      {
@@ -162,6 +163,17 @@ MAT *mat_invert(MAT *input_matrix)
                {
                     ELEM(augmented_matrix, i, j + dimension) = 0.0;
                }
+          }
+     }
+
+     for (i = 0; i < dimension; i++)
+     {
+          pivot_value = ELEM(augmented_matrix, i, i);
+          if (pivot_value == 0)
+          {
+               mat_destroy(augmented_matrix);
+               mat_destroy(inverse_matrix);
+               return NULL;
           }
      }
 }
