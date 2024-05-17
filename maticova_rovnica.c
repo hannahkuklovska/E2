@@ -31,13 +31,13 @@ MAT *mat_create_with_type(unsigned int rows, unsigned int cols)
 
 MAT *mat_create_by_file(char *filename)
 {
+     unsigned int rows, cols;
      FILE *file = fopen(filename, "matica");
      if (file == NULL)
      {
           return NULL;
      }
 
-     unsigned int rows, cols;
      fread(&rows, sizeof(unsigned int), 1, file);
      fread(&cols, sizeof(unsigned int), 1, file);
 
