@@ -128,7 +128,8 @@ void mat_print(MAT *mat)
 MAT *mat_invert(MAT *input_matrix)
 {
      unsigned int dimension;
-     MAT *augmented_matrix, *inverse_matrix;
+     MAT *augmented_matrix;
+     MAT *inverse_matrix;
 
      if (input_matrix->rows != input_matrix->cols)
      {
@@ -138,6 +139,13 @@ MAT *mat_invert(MAT *input_matrix)
      dimension = input_matrix->rows;
      augmented_matrix = mat_create_with_type(dimension, 2 * dimension);
      inverse_matrix = mat_create_with_type(dimension, dimension);
+
+     if (inverse_matrix = NULL || augmented_matrix == NULL)
+     {
+          mat_destroy(augmented_matrix);
+          mat_destroy(inverse_matrix);
+          return NULL;
+     }
 }
 
 char mat_division(MAT *a, MAT *b, MAT *c)
