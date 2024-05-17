@@ -32,7 +32,8 @@ MAT *mat_create_with_type(unsigned int rows, unsigned int cols)
 MAT *mat_create_by_file(char *filename)
 {
      unsigned int rows, cols;
-     FILE *file = fopen(filename, "matica");
+
+     FILE *file = fopen(filename, "rb");
      if (file == NULL)
      {
           return NULL;
@@ -58,7 +59,7 @@ MAT *mat_create_by_file(char *filename)
 
 char mat_save(MAT *mat, char *filename)
 {
-     FILE *file = fopen(filename, "matica");
+     FILE *file = fopen(filename, "wb");
      if (file == NULL)
      {
           return NULL;
@@ -121,6 +122,14 @@ void mat_print(MAT *mat)
                printf("%.2f\t", ELEM(mat, i, j));
           }
           printf("\n");
+     }
+}
+
+MAT *mat_invert(MAT *input_mat)
+{
+     if (input_mat->rows != input_mat->cols)
+     {
+          return NULL;
      }
 }
 
