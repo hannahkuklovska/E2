@@ -27,9 +27,10 @@ MAT *mat_invert(MAT *input_matrix);
 
 ### Popis
 
-pomocou Gaussovej eliminačnej metódy
-input matrix:
+pomocou _Gaussovej eliminačnej metódy_
+**input matrix:**
 
+$$
 \[
 \begin{bmatrix}
 a*{11} & a*{12} & a*{13} & 1 & 0 & 0 \\\
@@ -37,8 +38,11 @@ a*{21} & a*{22} & a*{23} & 0 & 1 & 0 \\\
 a*{31} & a*{32} & a\_{33} & 0 & 0 & 1 \\\
 \end{bmatrix}
 \]
+$$
 
-identity matrix
+**identity matrix:**
+
+$$
 \[
 \begin{array}{ccc}
 1 & 0 & 0 \\\
@@ -46,8 +50,11 @@ identity matrix
 0 & 0 & 1 \\\
 \end{array}
 \]
+$$
 
-augmented matrix
+**augmented matrix:**
+
+$$
 \[
 \begin{bmatrix}
 a*{11} & a*{12} & a*{13} \\\
@@ -55,9 +62,10 @@ a*{21} & a*{22} & a*{23} \\\
 a*{31} & a*{32} & a\_{33} \\\
 \end{bmatrix}
 \]
+$$
 
-- input_matrix: Vstupná matica, ktorej inverznú maticu chceme vypočítať.
-- Návratová hodnota: Inverzná matica k vstupnej matici, alebo NULL v prípade neúspechu (napríklad ak vstupná matica nie je invertovateľná).
-- Funkcia predpokladá, že vstupná matica je štvorcová (rovnaký počet riadkov a stĺpcov).
-- V prípade, že vstupná matica nie je invertovateľná, funkcia vráti NULL.
-- V prípade úspechu vráti funkcia inverznú maticu k vstupnej matici.
+- **input_matrix:** Vstupná matica, ktorej inverznú maticu chceme vypočítať.
+- **návratová hodnota:** Inverzná matica k vstupnej matici, alebo NULL v prípade neúspechu (napríklad ak vstupná matica nie je invertovateľná).
+- funkcia predpokladá, že vstupná matica je _štvorcová_ (rovnaký počet riadkov a stĺpcov).
+- v prípade, že vstupná matica nie je invertovateľná, funkcia vráti **NULL**.
+- v prípade úspechu vráti funkcia inverznú maticu k vstupnej matici.
