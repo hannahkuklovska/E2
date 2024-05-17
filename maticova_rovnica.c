@@ -153,6 +153,15 @@ MAT *mat_invert(MAT *input_matrix)
           for (j = 0; i < dimension; j++)
           {
                ELEM(augmented_matrix, i, j) = ELEM(input_matrix, i, j);
+
+               if (j == i)
+               {
+                    ELEM(augmented_matrix, i, j + dimension) = 1.0;
+               }
+               else
+               {
+                    ELEM(augmented_matrix, i, j + dimension) = 0.0;
+               }
           }
      }
 }
