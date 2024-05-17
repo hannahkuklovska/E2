@@ -27,17 +27,16 @@ MAT *mat_invert(MAT *input_matrix);
 
 ### Popis
 
-- pomocou Gaussovej eliminačnej metódy
-  input matrix:
-  \[
-  \left[
-  \begin{array}{ccc|ccc}
-  a_{11} & a_{12} & a_{13} & 1 & 0 & 0 \\
-  a_{21} & a_{22} & a_{23} & 0 & 1 & 0 \\
-  a_{31} & a_{32} & a_{33} & 0 & 0 & 1 \\
-  \end{array}
-  \right]
-  \]
+pomocou Gaussovej eliminačnej metódy
+input matrix:
+
+\[
+\begin{bmatrix}
+a*{11} & a*{12} & a*{13} & 1 & 0 & 0 \\
+a*{21} & a*{22} & a*{23} & 0 & 1 & 0 \\
+a*{31} & a*{32} & a\_{33} & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
 
 identity matrix
 \[
