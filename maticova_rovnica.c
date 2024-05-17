@@ -125,12 +125,16 @@ void mat_print(MAT *mat)
      }
 }
 
-MAT *mat_invert(MAT *input_mat)
+MAT *mat_invert(MAT *input_matrix)
 {
-     if (input_mat->rows != input_mat->cols)
+     unsigned int dimension;
+
+     if (input_matrix->rows != input_matrix->cols)
      {
           return NULL;
      }
+
+     dimension = input_matrix->rows;
 }
 
 char mat_division(MAT *a, MAT *b, MAT *c)
