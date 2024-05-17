@@ -29,19 +29,33 @@ MAT *mat_invert(MAT *input_matrix);
 
 - pomocou Gaussovej eliminačnej metódy
   input matrix:
-  | a11 a12 a13 |
-  | a21 a22 a23 |
-  | a31 a32 a33 |
+  \[
+  \left[
+  \begin{array}{ccc|ccc}
+  a_{11} & a_{12} & a_{13} & 1 & 0 & 0 \\
+  a_{21} & a_{22} & a_{23} & 0 & 1 & 0 \\
+  a_{31} & a_{32} & a_{33} & 0 & 0 & 1 \\
+  \end{array}
+  \right]
+  \]
 
 identity matrix
-| 1 0 0 |
-| 0 1 0 |
-| 0 0 1 |
+\[
+\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{array}
+\]
 
 augmented matrix
-| a11 a12 a13 | 1 0 0 |
-| a21 a22 a23 | 0 1 0 |
-| a31 a32 a33 | 0 0 1 |
+\[
+\begin{bmatrix}
+a*{11} & a*{12} & a*{13} \\
+a*{21} & a*{22} & a*{23} \\
+a*{31} & a*{32} & a\_{33} \\
+\end{bmatrix}
+\]
 
 - input_matrix: Vstupná matica, ktorej inverznú maticu chceme vypočítať.
 - Návratová hodnota: Inverzná matica k vstupnej matici, alebo NULL v prípade neúspechu (napríklad ak vstupná matica nie je invertovateľná).
