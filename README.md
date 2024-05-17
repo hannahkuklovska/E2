@@ -31,37 +31,31 @@ pomocou _Gaussovej eliminačnej metódy_
 **input matrix:**
 
 $$
-\[
 \begin{bmatrix}
-a*{11} & a*{12} & a*{13} & 1 & 0 & 0 \\\
-a*{21} & a*{22} & a*{23} & 0 & 1 & 0 \\\
-a*{31} & a*{32} & a\_{33} & 0 & 0 & 1 \\\
+a\_{11} & a\_{12} & a\_{13} & 1 & 0 & 0 \\\
+a\_{21} & a_{22} & a_{23} & 0 & 1 & 0 \\\
+a\_{31} & a\_{32} & a\_{33} & 0 & 0 & 1 \\\
 \end{bmatrix}
-\]
 $$
 
 **identity matrix:**
 
 $$
-\[
 \begin{array}{ccc}
 1 & 0 & 0 \\\
 0 & 1 & 0 \\\
 0 & 0 & 1 \\\
 \end{array}
-\]
 $$
 
 **augmented matrix:**
 
 $$
-\[
 \begin{bmatrix}
-a*{11} & a*{12} & a*{13} \\\
-a*{21} & a*{22} & a*{23} \\\
-a*{31} & a*{32} & a\_{33} \\\
+a\_{11} & a\_{12} & a\_{13} \\\
+a\_{21} & a\_{22} & a\_{23} \\\
+a\_{31} & a\_{32} & a\_{33} \\\
 \end{bmatrix}
-\]
 $$
 
 - **input_matrix:** Vstupná matica, ktorej inverznú maticu chceme vypočítať.
