@@ -130,7 +130,7 @@ MAT *mat_invert(MAT *input_matrix)
      unsigned int dimension;
      MAT *augmented_matrix;
      MAT *inverse_matrix;
-     int i, j, k;
+     int i, j, k, factor;
      float pivot_value;
 
      if (input_matrix->rows != input_matrix->cols)
@@ -186,6 +186,7 @@ MAT *mat_invert(MAT *input_matrix)
                {
                     continue;
                }
+               factor = ELEM(augmented_matrix, k, i);
           }
      }
 }
