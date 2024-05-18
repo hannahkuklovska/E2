@@ -187,6 +187,9 @@ MAT *mat_invert(MAT *input_matrix)
                     continue;
                }
                factor = ELEM(augmented_matrix, k, i);
+               for (j = 0; j < 2 * dimension; j++)
+               {
+               }
           }
      }
 }
