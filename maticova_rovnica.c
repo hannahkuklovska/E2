@@ -179,6 +179,14 @@ MAT *mat_invert(MAT *input_matrix)
           {
                ELEM(augmented_matrix, i, j) /= pivot_value;
           }
+
+          for (k = 0; k < dimension; k++)
+          {
+               if (k == i)
+               {
+                    continue;
+               }
+          }
      }
 }
 
