@@ -165,9 +165,10 @@ MAT *mat_invert(MAT *input_matrix)
                }
           }
      }
-
+     // Gaussova eliminacna metoda
      for (i = 0; i < dimension; i++)
      {
+          // najdenie pivota
           pivot_value = ELEM(augmented_matrix, i, i);
           if (pivot_value == 0)
           {
@@ -175,6 +176,7 @@ MAT *mat_invert(MAT *input_matrix)
                mat_destroy(inverse_matrix);
                return NULL;
           }
+          // normalizacia pivota
           for (j = 0; j < 2 * dimension; j++)
           {
                ELEM(augmented_matrix, i, j) /= pivot_value;
@@ -191,6 +193,14 @@ MAT *mat_invert(MAT *input_matrix)
                {
                     ELEM(augmented_matrix, k, j) -= factor * ELEM(augmented_matrix, i, j);
                }
+          }
+     }
+     // oddelenie inverznej casti
+     for (i = 0; i < dimension; i++)
+     {
+          for (j = 0; j < dimension; j++)
+          {
+               ELEM(inverse_matrix, i, j) = ELEM(augmented_matrix, i, j + dimension);
           }
      }
 }
