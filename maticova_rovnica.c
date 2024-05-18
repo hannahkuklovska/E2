@@ -175,6 +175,10 @@ MAT *mat_invert(MAT *input_matrix)
                mat_destroy(inverse_matrix);
                return NULL;
           }
+          for (j = 0; j < 2 * dimension; j++)
+          {
+               ELEM(augmented_matrix, i, j) /= pivot_value;
+          }
      }
 }
 
