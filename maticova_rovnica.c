@@ -203,6 +203,8 @@ MAT *mat_invert(MAT *input_matrix)
                ELEM(inverse_matrix, i, j) = ELEM(augmented_matrix, i, j + dimension);
           }
      }
+     mat_destroy(augmented_matrix);
+     return inverse_matrix;
 }
 
 char mat_division(MAT *a, MAT *b, MAT *c)
