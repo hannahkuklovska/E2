@@ -246,7 +246,7 @@ char mat_division(MAT *a, MAT *b, MAT *c)
 
                for (k = 0; k < a->cols; k++)
                {
-                    ELEM(c, i, j) += ELEM(a, i, k) * ELEM(b, k, j);
+                    ELEM(c, i, j) += ELEM(a, i, k) * ELEM(inverse_b, k, j);
                }
           }
      }
