@@ -248,3 +248,12 @@ char mat_division(MAT *a, MAT *b, MAT *c)
      mat_destroy(inverse_b);
      return SUCCESS;
 }
+
+void main()
+{
+     MAT *a, *b, *m;
+
+     a = mat_create_with_type(3, 3);
+     b = mat_create_with_type(3, 3);
+     m = mat_create_with_type(3, 3);
+}
