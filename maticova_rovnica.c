@@ -253,7 +253,19 @@ void main()
 {
      MAT *a, *b, *m;
 
-     a = mat_create_with_type(3, 3);
-     b = mat_create_with_type(3, 3);
-     m = mat_create_with_type(3, 3);
+     a = mat_create_with_type(2, 2);
+     b = mat_create_with_type(2, 2);
+     m = mat_create_with_type(2, 2);
+
+     ELEM(a, 0, 0) = 1;
+     ELEM(a, 0, 0) = 2;
+     ELEM(a, 0, 0) = 3;
+     ELEM(a, 0, 0) = 4;
+
+     ELEM(a, 0, 0) = 4;
+     ELEM(a, 0, 0) = 2;
+     ELEM(a, 0, 0) = 1;
+     ELEM(a, 0, 0) = 7;
+
+     m = mat_division(a, b, m);
 }
