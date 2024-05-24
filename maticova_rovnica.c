@@ -226,19 +226,24 @@ char mat_division(MAT *a, MAT *b, MAT *c)
      MAT *inverse_b;
      unsigned int i, j, k;
 
+     nullity(c);
      if (a->cols != b->rows)
      {
           return NULL;
      }
 
      inverse_b = mat_invert(b);
+     if (inverse_b == NULL)
+     {
+          return NULL;
+     }
 
      for (i = 0; i < a->rows; i++)
      {
 
           for (j = 0; j < inverse_b->cols; j++)
           {
-               nullity(b);
+
                for (k = 0; k < a->cols; k++)
                {
                     ELEM(c, i, j) += ELEM(a, i, k) * ELEM(b, k, j);
@@ -267,8 +272,17 @@ void main()
      ELEM(b, 1, 0) = 1;
      ELEM(b, 1, 1) = 7;
 
-     mat_division(a, b, m);
+     if (mat_division(a, b, m) == SUCCESS)
+     {
+          printf("A/B = \n");
+          mat_print(m);
+     }
+     else
+     {
+          printf("Fail.\n");
+     }
 
      mat_destroy(a);
      mat_destroy(b);
+     mat_destroy(m);
 }
