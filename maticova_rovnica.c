@@ -219,4 +219,15 @@ char mat_division(MAT *a, MAT *b, MAT *c)
      }
 
      inverse_b = mat_invert(b);
+
+     for (i = 0; i < a->rows; i++)
+     {
+          for (j = 0; j < inverse_b->cols; j++)
+          {
+               for (k = 0; k < a->cols; k++)
+               {
+                    ELEM(c, i, j) += ELEM(a, i, k) * ELEM(b, k, j);
+               }
+          }
+     }
 }
