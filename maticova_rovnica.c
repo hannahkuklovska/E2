@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define ELEM(mat, i, j) ((mat)->elem[(i) * (mat)->cols + j])
 #define SUCCESS 1
-#define NULL 0
+#define FAILURE 0
 
 typedef struct
 {
@@ -75,7 +75,7 @@ char mat_save(MAT *mat, char *filename)
      FILE *file = fopen(filename, "wb");
      if (file == NULL)
      {
-          return NULL;
+          return FAILURE;
      }
      fwrite("M1", sizeof(char), 2, file);
      fwrite(&(mat->rows), sizeof(unsigned int), 1, file);
@@ -226,17 +226,18 @@ char mat_division(MAT *a, MAT *b, MAT *c)
      MAT *inverse_b;
      unsigned int i, j, k;
 
-     nullity(c);
      if (a->cols != b->rows)
      {
-          return NULL;
+          return FAILURE;
      }
 
      inverse_b = mat_invert(b);
      if (inverse_b == NULL)
      {
-          return NULL;
+          return FAILURE;
      }
+
+     nullity(c);
 
      for (i = 0; i < a->rows; i++)
      {
