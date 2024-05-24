@@ -34,7 +34,7 @@ MAT *nullity(MAT *null)
      unsigned i, j;
      for (i = 0; i < null->rows; i++)
      {
-          for (j = 0; null->cols; j++)
+          for (j = 0; j < null->cols; j++)
           {
                ELEM(null, i, j) = 0.0;
           }
@@ -143,8 +143,8 @@ MAT *mat_invert(MAT *input_matrix)
      unsigned int dimension;
      MAT *augmented_matrix;
      MAT *inverse_matrix;
-     int i, j, k, factor;
-     float pivot_value;
+     int i, j, k;
+     float pivot_value, factor;
 
      if (input_matrix->rows != input_matrix->cols)
      {
@@ -155,7 +155,7 @@ MAT *mat_invert(MAT *input_matrix)
      augmented_matrix = mat_create_with_type(dimension, 2 * dimension);
      inverse_matrix = mat_create_with_type(dimension, dimension);
 
-     if (inverse_matrix = NULL || augmented_matrix == NULL)
+     if (inverse_matrix == NULL || augmented_matrix == NULL)
      {
           mat_destroy(augmented_matrix);
           mat_destroy(inverse_matrix);
@@ -164,7 +164,7 @@ MAT *mat_invert(MAT *input_matrix)
 
      for (i = 0; i < dimension; i++)
      {
-          for (j = 0; i < dimension; j++)
+          for (j = 0; j < dimension; j++)
           {
                ELEM(augmented_matrix, i, j) = ELEM(input_matrix, i, j);
 
@@ -258,14 +258,17 @@ void main()
      m = mat_create_with_type(2, 2);
 
      ELEM(a, 0, 0) = 1;
-     ELEM(a, 0, 0) = 2;
-     ELEM(a, 0, 0) = 3;
-     ELEM(a, 0, 0) = 4;
+     ELEM(a, 0, 1) = 2;
+     ELEM(a, 1, 0) = 3;
+     ELEM(a, 1, 1) = 4;
 
-     ELEM(a, 0, 0) = 4;
-     ELEM(a, 0, 0) = 2;
-     ELEM(a, 0, 0) = 1;
-     ELEM(a, 0, 0) = 7;
+     ELEM(b, 0, 0) = 4;
+     ELEM(b, 0, 1) = 2;
+     ELEM(b, 1, 0) = 1;
+     ELEM(b, 1, 1) = 7;
 
-     m = mat_division(a, b, m);
+     mat_division(a, b, m);
+
+     mat_destroy(a);
+     mat_destroy(b);
 }
