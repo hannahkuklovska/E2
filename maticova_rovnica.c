@@ -29,6 +29,18 @@ MAT *mat_create_with_type(unsigned int rows, unsigned int cols)
      return mat;
 }
 
+MAT *nullity(MAT *null)
+{
+     unsigned i, j;
+     for (i = 0; i < null->rows; i++)
+     {
+          for (j = 0; null->cols; j++)
+          {
+               ELEM(null, i, j) = 0.0;
+          }
+     }
+}
+
 MAT *mat_create_by_file(char *filename)
 {
      unsigned int rows, cols;
