@@ -217,4 +217,6 @@ char mat_division(MAT *a, MAT *b, MAT *c)
      {
           return NULL;
      }
+
+     inverse_b = mat_invert(b);
 }
