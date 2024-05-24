@@ -231,4 +231,5 @@ char mat_division(MAT *a, MAT *b, MAT *c)
           }
      }
      mat_destroy(inverse_b);
+     return SUCCESS;
 }
