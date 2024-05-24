@@ -39,6 +39,7 @@ MAT *nullity(MAT *null)
                ELEM(null, i, j) = 0.0;
           }
      }
+     return null;
 }
 
 MAT *mat_create_by_file(char *filename)
@@ -234,8 +235,10 @@ char mat_division(MAT *a, MAT *b, MAT *c)
 
      for (i = 0; i < a->rows; i++)
      {
+
           for (j = 0; j < inverse_b->cols; j++)
           {
+               nullity(b);
                for (k = 0; k < a->cols; k++)
                {
                     ELEM(c, i, j) += ELEM(a, i, k) * ELEM(b, k, j);
