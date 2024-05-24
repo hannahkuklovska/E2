@@ -210,11 +210,11 @@ MAT *mat_invert(MAT *input_matrix)
 char mat_division(MAT *a, MAT *b, MAT *c)
 {
 
-     MAT *inverse_mat_b;
+     MAT *inverse_b;
      unsigned int i, j, k;
 
-     // vysledna matica
-     mat_unit(c);
-     c->cols = b->cols;
-     c->rows = a->cols;
+     if (a->cols != b->rows)
+     {
+          return NULL;
+     }
 }
