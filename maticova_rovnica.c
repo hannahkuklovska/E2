@@ -280,7 +280,7 @@ void main()
 
      if (mat_division(a, b, m) == SUCCESS)
      {
-          printf("A/B = \n");
+          printf("B/A = \n");
           mat_print(m);
      }
      else
