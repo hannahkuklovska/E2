@@ -223,35 +223,35 @@ MAT *mat_invert(MAT *input_matrix)
 char mat_division(MAT *a, MAT *b, MAT *c)
 {
 
-     MAT *inverse_b;
+     MAT *inverse_a;
      unsigned int i, j, k;
 
-     if (a->cols != b->rows)
+     if (b->cols != a->rows)
      {
           return FAILURE;
      }
 
-     inverse_b = mat_invert(b);
-     if (inverse_b == NULL)
+     inverse_a = mat_invert(a);
+     if (inverse_a == NULL)
      {
           return FAILURE;
      }
 
      nullity(c);
 
-     for (i = 0; i < a->rows; i++)
+     for (i = 0; i < b->rows; i++)
      {
 
-          for (j = 0; j < inverse_b->cols; j++)
+          for (j = 0; j < inverse_a->cols; j++)
           {
 
-               for (k = 0; k < a->cols; k++)
+               for (k = 0; k < b->cols; k++)
                {
-                    ELEM(c, i, j) += ELEM(a, i, k) * ELEM(inverse_b, k, j);
+                    ELEM(c, i, j) += ELEM(b, i, k) * ELEM(inverse_a, k, j);
                }
           }
      }
-     mat_destroy(inverse_b);
+     mat_destroy(inverse_a);
      return SUCCESS;
 }
 
@@ -268,10 +268,15 @@ void main()
      ELEM(a, 1, 0) = 3;
      ELEM(a, 1, 1) = 4;
 
-     ELEM(b, 0, 0) = 4;
-     ELEM(b, 0, 1) = 2;
+     ELEM(b, 0, 0) = 5;
+     ELEM(b, 0, 1) = 3;
      ELEM(b, 1, 0) = 1;
      ELEM(b, 1, 1) = 7;
+
+     printf("A = \n");
+     mat_print(a);
+     printf("B =\n");
+     mat_print(b);
 
      if (mat_division(a, b, m) == SUCCESS)
      {
@@ -283,6 +288,7 @@ void main()
           printf("Fail.\n");
      }
 
+     // BxM = A
      mat_destroy(a);
      mat_destroy(b);
      mat_destroy(m);
