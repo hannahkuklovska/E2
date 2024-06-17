@@ -315,7 +315,7 @@ void main()
      if (nacitana != NULL)
      {
           printf("Matica bola uspesne nacitana.\n");
-          // mat_print(nacitana);
+          mat_print(nacitana);
      }
      else
      {
