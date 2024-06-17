@@ -55,7 +55,14 @@ MAT *mat_create_by_file(char *filename)
           return NULL;
      }
 
-          fread(&rows, sizeof(unsigned int), 1, file);
+     fread(prve, sizeof(char), 2, file);
+     if (prve[0] != "M" || prve[1] != "1")
+     {
+          fclose(file);
+          return NULL;
+     }
+
+     fread(&rows, sizeof(unsigned int), 1, file);
      fread(&cols, sizeof(unsigned int), 1, file);
 
      // vytvorenie matice
