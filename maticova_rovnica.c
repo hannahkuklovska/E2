@@ -29,7 +29,7 @@ MAT *mat_create_with_type(unsigned int rows, unsigned int cols)
      return mat;
 }
 
-MAT *nullity(MAT *null)
+MAT *mat_zero(MAT *null)
 {
      unsigned i, j;
      for (i = 0; i < null->rows; i++)
@@ -288,7 +288,6 @@ void main()
           printf("Fail.\n");
      }
 
-     // BxM = A
      mat_destroy(a);
      mat_destroy(b);
      mat_destroy(m);
