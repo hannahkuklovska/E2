@@ -292,11 +292,7 @@ void main()
           printf("Fail.\n");
      }
 
-     mat_destroy(a);
-     mat_destroy(b);
-     mat_destroy(m);
-
-     // ulozenie matice
+         // ulozenie matice
      if (mat_save(a, "mat_a.dat") == SUCCESS)
      {
           printf("Matica bola uspesne ulozena.\n");
@@ -316,4 +312,8 @@ void main()
      {
           printf("Nacitanie zlyhalo.\n");
      }
+
+     mat_destroy(a);
+     mat_destroy(b);
+     mat_destroy(m);
 }
