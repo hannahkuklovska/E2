@@ -14,6 +14,7 @@ typedef struct
 MAT *mat_create_with_type(unsigned int rows, unsigned int cols)
 {
      MAT *mat = (MAT *)malloc(sizeof(MAT));
+
      if (mat == NULL)
      {
           return NULL;
@@ -32,6 +33,7 @@ MAT *mat_create_with_type(unsigned int rows, unsigned int cols)
 MAT *mat_zero(MAT *null)
 {
      unsigned i, j;
+
      for (i = 0; i < null->rows; i++)
      {
           for (j = 0; j < null->cols; j++)
@@ -65,7 +67,6 @@ MAT *mat_create_by_file(char *filename)
 
      // prečítanie matice
      fread(mat->elem, sizeof(float), rows * cols, file);
-
      fclose(file);
      return mat;
 }
@@ -97,6 +98,7 @@ void mat_destroy(MAT *mat)
 void mat_unit(MAT *mat)
 {
      unsigned int i, j;
+
      for (i = 0; i < mat->rows; i++)
      {
           for (j = 0; j < mat->cols; j++)
@@ -116,6 +118,7 @@ void mat_unit(MAT *mat)
 void mat_random(MAT *mat)
 {
      unsigned int i, j;
+
      for (i = 0; i < mat->rows; i++)
      {
           for (j = 0; j < mat->cols; j++)
@@ -128,6 +131,7 @@ void mat_random(MAT *mat)
 void mat_print(MAT *mat)
 {
      unsigned int i, j;
+
      for (i = 0; i < mat->rows; i++)
      {
           for (j = 0; j < mat->cols; j++)
@@ -222,7 +226,6 @@ MAT *mat_invert(MAT *input_matrix)
 
 char mat_division(MAT *a, MAT *b, MAT *c)
 {
-
      MAT *inverse_a;
      unsigned int i, j, k;
 
