@@ -261,6 +261,7 @@ char mat_division(MAT *a, MAT *b, MAT *c)
 void main()
 {
      MAT *a, *b, *m;
+     MAT *nacitana;
 
      a = mat_create_with_type(2, 2);
      b = mat_create_with_type(2, 2);
@@ -303,5 +304,16 @@ void main()
      else
      {
           printf("Ulozenie sa nepodarilo.\n");
+     }
+
+     // nacitanie matice
+     nacitana = mat_create_by_file("mat_a.dat");
+     if (nacitana != NULL)
+     {
+          printf("Matica bola uspesne nacitana.\n");
+     }
+     else
+     {
+          printf("Nacitanie zlyhalo.\n");
      }
 }
