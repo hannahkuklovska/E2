@@ -317,4 +317,5 @@ void main()
      mat_destroy(a);
      mat_destroy(b);
      mat_destroy(m);
+     mat_destroy(nacitana);
 }
