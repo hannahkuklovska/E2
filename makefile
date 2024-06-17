@@ -6,19 +6,21 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -pedantic
 
-# Source files
-MATICOVA_ROVNICA_SOURCE = maticova_rovnica.c
-
-# Executables
-
-MATICOVA_ROVNICA_OUTPUT = maticova_rovnica
-
-all: $(MATICOVA_ROVNICA_OUTPUT) 
-
-$(MATICOVA_ROVNICA_OUTPUT) : $(MATICOVA_ROVNICA_SOURCE)
-	$(CC) $(CFLAGS) -o $(MATICOVA_ROVNICA_OUTPUT)  $(MATICOVA_ROVNICA_SOURCE)
+#Target
+TARGET = mat
+OBJS = main.o mat.o
 
 
+
+#Pravidla vykonania
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET)  $(OBJS)
+
+main.o: mat.c mat.h
+	$(CC) $(CFLAGS) -c mat.c -o mat.o
+
+main.o: mat.c mat.h
+	$(CC) $(CFLAGS) -c mat.c -o main.o
 
 clean:
-	rm -f $(MATICOVA_ROVNICA_OUTPUT)
+	rm -f $(TARGET) $(OBJS)
