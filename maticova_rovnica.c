@@ -47,6 +47,7 @@ MAT *mat_zero(MAT *null)
 MAT *mat_create_by_file(char *filename)
 {
      unsigned int rows, cols;
+     char prve[2];
 
      FILE *file = fopen(filename, "rb");
      if (file == NULL)
@@ -54,7 +55,7 @@ MAT *mat_create_by_file(char *filename)
           return NULL;
      }
 
-     fread(&rows, sizeof(unsigned int), 1, file);
+          fread(&rows, sizeof(unsigned int), 1, file);
      fread(&cols, sizeof(unsigned int), 1, file);
 
      // vytvorenie matice
@@ -240,7 +241,7 @@ char mat_division(MAT *a, MAT *b, MAT *c)
           return FAILURE;
      }
 
-     nullity(c);
+     mat_zero(c);
 
      for (i = 0; i < b->rows; i++)
      {
@@ -307,7 +308,7 @@ void main()
      if (nacitana != NULL)
      {
           printf("Matica bola uspesne nacitana.\n");
-          mat_print(nacitana);
+          // mat_print(nacitana);
      }
      else
      {
