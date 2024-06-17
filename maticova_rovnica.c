@@ -292,7 +292,7 @@ void main()
           printf("Fail.\n");
      }
 
-         // ulozenie matice
+     // ulozenie matice
      if (mat_save(a, "mat_a.dat") == SUCCESS)
      {
           printf("Matica bola uspesne ulozena.\n");
@@ -307,6 +307,7 @@ void main()
      if (nacitana != NULL)
      {
           printf("Matica bola uspesne nacitana.\n");
+          mat_print(nacitana);
      }
      else
      {
