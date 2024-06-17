@@ -56,7 +56,7 @@ MAT *mat_create_by_file(char *filename)
      }
 
      fread(prve, sizeof(char), 2, file);
-     if (prve[0] != "M" || prve[1] != "1")
+     if (prve[0] != 'M' || prve[1] != '1')
      {
           fclose(file);
           return NULL;
