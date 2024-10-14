@@ -79,7 +79,8 @@ Tento program implementuje riešenie lineárnych sústav rovníc pomocou operác
 
 Operácia **delenia matíc** v programe (funkcia `mat_division`) rieši problém vyjadrený ako:
 
-C = B * A^{-1}
+`C = B * A^{-1}`
+
 
 
 Kde:
